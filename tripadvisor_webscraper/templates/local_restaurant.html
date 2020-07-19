@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Local Restaurants in Taiwan</title>
+    <style>
+      .home {
+        border: none;
+        color:white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 12px;
+        margin: 20px 2px;
+        cursor: pointer;
+        background-color: #a1cfb8;}
+
+        div {text-align:center;}
+        form {text-align: center;}
+        input[type=submit]{
+          border: none;
+          color: white;
+          padding: 10px 20px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 12px;
+          margin: 20px 2px;
+          cursor: pointer;
+          background-color: #000000;
+        }
+        select{
+          padding: 6px 20px;
+        }
+    </style>
+  </head>
+  <body>
+    <form action="show_local_restaurant" method="GET"> 
+      <select name="location">
+        {% for location in location_list %}
+          <option value={{location}}>{{location}}</option>
+        {% endfor %}
+      </select>
+      <input class="submit" type="submit" value="확인">
+      </form>
+
+
+
+       <div>
+        <form action="/" method="get">
+          <button class="home button">Go Home</button>
+        </form>
+      </div>
+  </body>
+
+</html>

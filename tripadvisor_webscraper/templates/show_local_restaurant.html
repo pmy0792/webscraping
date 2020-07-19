@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{{location}}</title>
+    <style>
+      h1 {text-align:center}
+      .button {
+        border: none;
+        color: white;
+        padding: 10px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 12px;
+        margin: 10px 2px;
+        cursor: pointer;
+        background-color: #a1cfb8;}
+        div {text-align: center;}
+
+        section{
+        display:grid;
+        gap:20px;
+        grid-template-columns:repeat(4,1fr);
+        }
+    </style>
+      
+  </head>
+  <body>
+    <h2>There are {{number}} restaurants in {{location}}</h2>
+    <section>
+      <h4>Name</h4>
+      <h4>Rate</h4>
+      <h4>Review</h4>
+      <h4>Link</h4>
+      {% for restaurant in restaurants_list %}
+        <span>{{restaurant.get("name")}}</span>
+        <span>{{restaurant.get("rate")}}</span>
+        <span>{{restaurant.get("review")}}</span>
+        <a href="{{restaurant.get("link")}}" target="_blank">See reviews here</a>
+      {% endfor %}
+    </section>
+
+
+    <div>
+
+    <form action="/local_restaurant" method="get">
+      <button class="back button">Back</button>
+    </form>
+    <form action="/" method="get">
+      <button class="home button">Go Home</button>
+    </form>
+
+    </div>
+  </body>
+</html>

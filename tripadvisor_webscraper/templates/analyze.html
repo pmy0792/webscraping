@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Analyze Restaurants in Taiwan</title>
+  </head>
+  <body>
+    {% for location in location_list %}
+      <h4>{{location}}</h4>
+
+      <img src="/static/{{location}}.png">
+
+    {% endfor %}
+
+  </body>
+</html>
